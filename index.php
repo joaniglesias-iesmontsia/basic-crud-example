@@ -9,7 +9,7 @@ if (isset($_GET['action'])) {
             $controller->create();
             break;
         case 'update':
-            $controller->update($_GET['id']);
+            $controller->update($_POST['id'], $_POST['name'], $_POST['surname']);
             break;
         case 'delete':
             $controller->delete($_GET['id']);

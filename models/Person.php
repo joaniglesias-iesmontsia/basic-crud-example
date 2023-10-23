@@ -27,7 +27,7 @@ class Person {
     public function getById($id) {
 
         $query = 'SELECT * FROM " . $this->table_name . " WHERE id = :id';
-    
+  
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -52,7 +52,7 @@ class Person {
     
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':id', $id);
-        $stmt->bindParam(';name', $name);
+        $stmt->bindParam(':name', $name);
         $stmt->bindParam(':surname', $surname);
         
         $stmt->execute();
